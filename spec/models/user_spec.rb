@@ -60,6 +60,13 @@ describe User do
         @user.should be_valid
       end      
     end
+
+    it "should be all lowercase after save" do
+      @user.email = "UPPER@CASE.COM";
+      @user.save 
+      @user.reload
+      @user.reload.email.should ==  "UPPER@CASE.COM".downcase
+    end
   end
 
   describe "when email address is already taken" do
