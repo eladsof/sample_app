@@ -9,7 +9,15 @@
 
 # Ignore the default SQLite database.
 /db/*.*
+/db/*
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#vim
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
