@@ -11,7 +11,7 @@
 /db/*.*
 /db/*
 /db/base/*.*
-
+/db/pg_stat_tmp/pgstat.stat
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
