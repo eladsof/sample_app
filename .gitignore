@@ -9,8 +9,9 @@
 
 # Ignore the default SQLite database.
 /db/*.*
+/db/*.sqlite3
 /db/base/*
-/db/pg_stat_tmp/*.*
+/db/pg_stat_tmp
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -39,3 +40,12 @@ Session.vim
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# RoR #
+#######
+
+doc/
+*.swp
+*~
+.project
+bundler_stubs/```
