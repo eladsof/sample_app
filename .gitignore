@@ -12,8 +12,10 @@
 /db/base/*
 /db/pg_stat_tmp
 /db_1
-/db/pg_xlog/*
-
+/db/pg_xlog
+/db/pg_clog
+/db/pg_subtrans
+/db/global
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
@@ -41,6 +43,7 @@ Session.vim
 Icon?
 ehthumbs.db
 Thumbs.db
+*.swp
 
 # RoR #
 #######
