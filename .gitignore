@@ -9,7 +9,7 @@
 
 # Ignore the default SQLite database.
 /db/*.*
-/db/base/*.*
+/db/base/*
 /db/pg_stat_tmp/*.*
 
 # Ignore all logfiles and tempfiles.
