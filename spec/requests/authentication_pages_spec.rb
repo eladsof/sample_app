@@ -52,6 +52,8 @@ describe "Authentication" do
       describe "followed by signout" do
         before { click_link "Sign out" }
         it { should have_link('Sign in') }
+	it { should_not have_profile_link(user_path(user)) }
+	it { should_not have_link('Settings', href: edit_user_path(user)) }
       end
     end
 
@@ -77,9 +79,7 @@ describe "Authentication" do
       describe "when attempting to visit a protected page" do
         before do
           visit edit_user_path(user)
-          fill_in "Email",    with: user.email
-          fill_in "Password", with: user.password
-          click_button "Sign in"
+          valid_signin user
         end
 
         describe "after signing in" do

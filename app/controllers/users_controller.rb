@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :edit, :update, :destroy] 
+  before_filter :signed_in_to_root, only:[:new, :create]
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: :destroy
 
@@ -60,6 +61,16 @@ class UsersController < ApplicationController
     end
 
     def admin_user
-      redirect_to(root_path) unless current_user.admin?
+      if (params[:id].to_i == current_user.id.to_i) && (current_user.admin?)
+	redirect_to(root_path) 
+      else
+        redirect_to(root_path) unless current_user.admin?
+      end
+    end
+    
+    def signed_in_to_root
+      if(signed_in?) 
+	redirect_to(root_path)
+      end
     end
 end
