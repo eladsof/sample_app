@@ -16,6 +16,7 @@
 /db/pg_clog
 /db/pg_subtrans
 /db/global
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
